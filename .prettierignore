@@ -1,0 +1,5 @@
+# Ignore absolutely everything in this project
+node_modules
+build
+dist
+.next
