@@ -1,5 +1,6 @@
-import Logo from './components/Logo';
-import Navigation from './components/Navigation';
+import Logo from '../components/Logo';
+import Navigation from '../components/Navigation';
+// import '../styles/globals.css';
 
 export const metadata = {
   title: 'The Wild Oasis Website',

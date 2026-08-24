@@ -15,6 +15,9 @@ export default function Navigation() {
       <li>
         <Link href='/account'>Account</Link>{' '}
       </li>
+      <li>
+        <Link href='/yusuf'>Yusuf</Link>{' '}
+      </li>
     </ul>
   );
 }
