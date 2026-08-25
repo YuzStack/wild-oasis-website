@@ -1,4 +1,8 @@
-import ReservationCard from '@/components/reservations/ReservationCard';
+import ReservationCard from '@/components/account/reservations/ReservationCard';
+
+export const metadata = {
+  title: 'Reservations',
+};
 
 export default function Page() {
   // CHANGE
