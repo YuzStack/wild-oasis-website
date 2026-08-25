@@ -1,11 +1,11 @@
-import { getCountries } from '@/app/_lib/data-service';
-
-// Let's imagine your colleague already built this component 😃
+import { getCountries } from '@/lib/actions';
 
 async function SelectCountry({ defaultCountry, name, id, className }) {
   const countries = await getCountries();
   const flag =
-    countries.find(country => country.name === defaultCountry)?.flag ?? '';
+    countries.find(country =>
+      country.names?.alternates.includes(defaultCountry),
+    )?.flag?.emoji ?? '';
 
   return (
     <select
@@ -17,7 +17,10 @@ async function SelectCountry({ defaultCountry, name, id, className }) {
     >
       <option value=''>Select country...</option>
       {countries.map(c => (
-        <option key={c.name} value={`${c.name}%${c.flag}`}>
+        <option
+          key={c.names?.alternates?.at(0)}
+          value={`${c.names?.alternates?.at(0)}%${c.flag?.emoji}`}
+        >
           {c.name}
         </option>
       ))}
