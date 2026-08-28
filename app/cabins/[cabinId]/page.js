@@ -1,19 +1,9 @@
+import { getCabin } from '@/lib/actions';
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from '@heroicons/react/24/solid';
+import Image from 'next/image';
 
-// PLACEHOLDER DATA
-const cabin = {
-  id: 89,
-  name: '001',
-  maxCapacity: 2,
-  regularPrice: 250,
-  discount: 0,
-  description:
-    'Discover the ultimate luxury getaway for couples in the cozy wooden cabin 001. Nestled in a picturesque forest, this stunning cabin offers a secluded and intimate retreat. Inside, enjoy modern high-quality wood interiors, a comfortable seating area, a fireplace and a fully-equipped kitchen. The plush king-size bed, dressed in fine linens guarantees a peaceful nights sleep. Relax in the spa-like shower and unwind on the private deck with hot tub.',
-  image:
-    'https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/cabin-images/cabin-001.jpg',
-};
-
-export default function Page() {
+export default async function CabinDetailPage({ params }) {
+  const cabin = await getCabin(params.cabinId);
   const { id, name, maxCapacity, regularPrice, discount, image, description } =
     cabin;
 
@@ -21,7 +11,12 @@ export default function Page() {
     <div className='mx-auto mt-8 max-w-6xl'>
       <div className='mb-24 grid grid-cols-[3fr_4fr] gap-20 border border-primary-800 px-10 py-3'>
         <div className='relative -translate-x-3 scale-[1.15]'>
-          <img src={image} alt={`Cabin ${name}`} />
+          <Image
+            src={image}
+            fill
+            className='object-cover'
+            alt={`Cabin ${name}`}
+          />
         </div>
 
         <div>
