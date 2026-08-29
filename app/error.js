@@ -1,6 +1,6 @@
 'use client';
 
-export default function ErrorPage({ error, reset }) {
+export default function Error({ error, reset }) {
   return (
     <main className='flex flex-col items-center justify-center gap-6'>
       <h1 className='text-3xl font-semibold'>Something went wrong!</h1>
