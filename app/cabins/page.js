@@ -2,13 +2,15 @@ import CabinList from '@/components/cabins/CabinList';
 import Spinner from '@/components/Spinner';
 import { Suspense } from 'react';
 
-export const revalidate = 3_600;
+export const revalidate = 3_600; // This is no more effective since the page now depend on a query string, therefore the page will now be strictly dynamically rendered.
 
 export const metadata = {
   title: 'Cabins',
 };
 
-export default function CabinsPage() {
+export default function CabinsPage({ _, searchParams }) {
+  const filter = searchParams?.capacity ?? 'all';
+
   return (
     <div>
       <h1 className='mb-5 text-4xl font-medium text-accent-400'>
@@ -24,7 +26,7 @@ export default function CabinsPage() {
       </p>
 
       <Suspense fallback={<Spinner />}>
-        <CabinList />
+        <CabinList filter={filter} />
       </Suspense>
     </div>
   );
