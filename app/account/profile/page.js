@@ -7,8 +7,9 @@ export const metadata = {
 
 export default function Page() {
   // CHANGE
-  const countryFlag = 'pt.jpg';
-  const nationality = 'portugal';
+  const countryFlag =
+    'https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg';
+  const nationality = 'Nigeria';
 
   return (
     <div>
