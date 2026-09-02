@@ -30,10 +30,32 @@
   }
 }
 
-/* For data picker */
-.rdp {
+/* For date picker (OUTDATED Approach) */
+/* .rdp {
   --rdp-cell-size: 32px !important;
   --rdp-accent-color: theme('colors.accent.500') !important;
   --rdp-background-color: theme('colors.accent.600') !important;
   margin: 0 !important;
+} */
+
+/* For Date Picker (UPDATED Approach) */
+.rdp-root {
+  /* 1. Size of calendar cells (Replaces --rdp-cell-size) */
+  --rdp-day-width: 32px !important;
+  --rdp-day-height: 32px !important;
+
+  /* 2. Main brand accent color (For start and end selected dots) */
+  --rdp-accent-color: theme('colors.accent.500') !important;
+
+  /* 3. Middle range background strip color */
+  --rdp-range_middle-background-color: theme('colors.accent.600') !important;
+
+  /* 4. Margin reset */
+  margin: 0 !important;
+}
+
+/* This Customizes the hover behavior over selectable days */
+*/ .rdp-day_button:hover:not(.rdp-day_disabled) {
+  background-color: theme('colors.accent.500');
+  color: white;
 }

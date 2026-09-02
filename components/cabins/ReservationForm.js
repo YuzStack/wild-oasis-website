@@ -1,5 +1,10 @@
+'use client';
+
+import { useReservation } from '@/contexts/reservation/ReservationContext';
+import { format } from 'date-fns';
+
 export default function ReservationForm({ cabin }) {
-  // CHANGE
+  const { range } = useReservation();
   const { maxCapacity } = cabin;
 
   return (
@@ -18,6 +23,13 @@ export default function ReservationForm({ cabin }) {
           <p>{user.name}</p>
         </div> */}
       </div>
+
+      {range.from && range.to && (
+        <p className='px-3 py-2'>
+          From {format(range.from, 'MMM, do, yyyy')} to{' '}
+          {format(range.to, 'MMM, do, yyyy')}
+        </p>
+      )}
 
       <form className='flex flex-col gap-5 bg-primary-900 px-16 py-10 text-lg'>
         <div className='space-y-2'>
