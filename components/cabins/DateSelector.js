@@ -1,8 +1,8 @@
 'use client';
 
+import { DayPicker } from '@daypicker/react';
 import { isWithinInterval } from 'date-fns';
-import { DayPicker } from 'react-day-picker';
-import 'react-day-picker/dist/style.css';
+import '@daypicker/react/style.css';
 
 function isAlreadyBooked(range, datesArr) {
   return (
@@ -30,13 +30,14 @@ export default function DateSelector({ settings, bookedDates, cabin }) {
       <DayPicker
         className='place-self-center p-6'
         mode='range'
-        min={minBookingLength + 1}
+        min={minBookingLength}
         max={maxBookingLength}
-        fromMonth={new Date()}
-        fromDate={new Date()}
-        toYear={new Date().getFullYear() + 5}
+        startMonth={new Date()}
+        endMonth={new Date(new Date().getFullYear() + 5, 11, 31)}
         captionLayout='dropdown'
         numberOfMonths={2}
+        disabled={{ before: new Date() }}
+        excludeDisabled
       />
 
       <div className='flex h-[72px] items-center justify-between bg-accent-500 px-8 text-primary-800'>
