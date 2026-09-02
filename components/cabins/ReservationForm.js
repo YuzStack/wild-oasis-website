@@ -1,6 +1,6 @@
-function ReservationForm() {
+export default function ReservationForm({ cabin }) {
   // CHANGE
-  const maxCapacity = 23;
+  const { maxCapacity } = cabin;
 
   return (
     <div className='scale-[1.01]'>
@@ -62,5 +62,3 @@ function ReservationForm() {
     </div>
   );
 }
-
-export default ReservationForm;
