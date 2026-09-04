@@ -1,9 +1,8 @@
 'use client';
 
 import { useReservation } from '@/contexts/reservation/ReservationContext';
-import { format } from 'date-fns';
 
-export default function ReservationForm({ cabin }) {
+export default function ReservationForm({ cabin, user }) {
   const { range } = useReservation();
   const { maxCapacity } = cabin;
 
@@ -12,7 +11,7 @@ export default function ReservationForm({ cabin }) {
       <div className='flex items-center justify-between bg-primary-800 px-16 py-2 text-primary-300'>
         <p>Logged in as</p>
 
-        {/* <div className='flex gap-4 items-center'>
+        <div className='flex items-center gap-4'>
           <img
             // Important to display google profile images
             referrerPolicy='no-referrer'
@@ -21,15 +20,8 @@ export default function ReservationForm({ cabin }) {
             alt={user.name}
           />
           <p>{user.name}</p>
-        </div> */}
+        </div>
       </div>
-
-      {range.from && range.to && (
-        <p className='px-3 py-2'>
-          From {format(range.from, 'MMM, do, yyyy')} to{' '}
-          {format(range.to, 'MMM, do, yyyy')}
-        </p>
-      )}
 
       <form className='flex flex-col gap-5 bg-primary-900 px-16 py-10 text-lg'>
         <div className='space-y-2'>
