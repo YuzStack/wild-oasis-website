@@ -27,7 +27,7 @@ const navLinks = [
   },
 ];
 
-function SideNavigation() {
+export default function SideNavigation() {
   const pathname = usePathname();
 
   return (
@@ -52,5 +52,3 @@ function SideNavigation() {
     </nav>
   );
 }
-
-export default SideNavigation;
