@@ -1,7 +1,7 @@
 import Cabin from '@/components/cabins/Cabin';
 import Reservation from '@/components/cabins/Reservation';
 import Spinner from '@/components/Spinner';
-import { getCabin, getCabins } from '@/lib/actions';
+import { getCabin, getCabins } from '@/lib/data-service';
 import { Suspense } from 'react';
 
 export async function generateMetadata({ params }) {

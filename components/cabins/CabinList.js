@@ -1,4 +1,4 @@
-import { getCabins } from '@/lib/actions';
+import { getCabins } from '@/lib/data-service';
 import CabinCard from './CabinCard';
 
 export default async function CabinList({ filter }) {

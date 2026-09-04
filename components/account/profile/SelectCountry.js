@@ -1,4 +1,4 @@
-import { getCountries } from '@/lib/actions';
+import { getCountries } from '@/lib/data-service';
 
 export default async function SelectCountry({
   defaultCountry,

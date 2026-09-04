@@ -1,4 +1,4 @@
-import { getBookedDatesByCabinId, getSettings } from '@/lib/actions';
+import { getBookedDatesByCabinId, getSettings } from '@/lib/data-service';
 import DateSelector from './DateSelector';
 import ReservationForm from './ReservationForm';
 import { auth } from '@/lib/auth';
